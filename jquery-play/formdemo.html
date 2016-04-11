@@ -1,0 +1,59 @@
+<head>
+    <title>control DOM element</title>
+    <style type="text/css">
+    .iframe{
+        border: solid 1px #888;
+        font-size: 13px;
+        margin: 0 auto;
+        width: 800px;
+    }
+    .title{
+        padding: 6px;
+        background-color: #EEE;
+    }
+    .content{
+        padding: 8px;
+        font-size: 12px;
+    }
+    .tip{
+        background-color: #EEE;
+        display: none;
+        font-size: 12px;
+        padding: 8px; 
+    }
+    .txt{
+        border: solid 1px #888;
+        width: 60px;
+    }
+    .btn{
+        border: solid 1px #888;
+        width: 60px;
+    }
+    .w260{
+        width: 260px;
+    }
+    </style>
+    <script type="text/javascript">
+        function btn_Click(){
+            var oTxtValue = document.getElementById("Text1").value;
+            var oRdoValue = (Radio1.checked)?"Male":"Female";
+            var oChkValue = (Checkbox1.checked)?"already":"none";
+            document.getElementById("Tip").style.display = "block";
+            document.getElementById("Tip").innerHTML = oTxtValue+"<br>"+oRdoValue+"<br>"+oChkValue;
+        }
+    </script>
+</head>
+<body>
+    <div class="iframe">
+        <div class="title">please input</div>
+        <div class="content">
+            Name: <input id="Text1" type="text" class="txt"/><br />
+            Sex:  <input id="Radio1" name="rdoSex" type="radio" value="Male"/>Male
+                  <input id="Radio2" name="rdoSex" type="radio" value="Female"/>Female<br />
+            Marriage: <input id="Checkbox1" type="checkbox"/><br/><br/>
+                      <input id="btnSubmit" type="button" value="Submit" class="btn" onclick="btn_Click();"/><br/><br/>
+        </div>
+        <div id="Tip" class="tip"></div>
+    </div>
+</body>
+</html>
